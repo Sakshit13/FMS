@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FMS._23.V1.ViewModels.STRequestModel>
+
+@{
+    ViewData["Title"] = "STRequests";
+}
+
+<h1>STRequests</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestedByDepot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestedToDepot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequisitionCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestedByDepot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestedToDepot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequisitionCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                    @if (item.Status == "Pending")
+                    {
+                        <a asp-action="STRequestDetals" class="btn btn-primary" asp-route-RequisitionCode="@item.RequisitionCode">ISSUE</a>
+                     }
+                 @*   <a asp-action="Details" asp-route-id="@item.RequisitionCode">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RequisitionCode">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

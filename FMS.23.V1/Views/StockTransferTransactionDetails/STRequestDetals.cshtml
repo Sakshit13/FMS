@@ -1,0 +1,91 @@
+﻿@model IEnumerable<FMS._23.V1.ViewModels.STRequestDetailsModel>
+
+@{
+    ViewData["Title"] = "STRequestDetals";
+}
+
+<h1>STRequestDetals</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequisitionCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestedByDepot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PartNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockQuantity)
+            </th>
+            <th>
+               Issue Qty
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cgst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Igst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequisitionCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestedByDepot)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestQty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockQuantity)
+                </td>
+                <td>
+                   <input type="text"></input>
+                   
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cgst)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Igst)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discount)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+﻿@model FMS._23.V1.Models.Grncontrol
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4><b>StockIn Details</b></h4>
+
+<a asp-action="Create" style="float:right" class="btn btn-primary">Add New GRN</a>
+<br />
+<br />
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+              <th>@Html.DisplayNameFor(model => model.PurchaseOrderNumber)</th>
+              <th>@Html.DisplayNameFor(model => model.Grnnumber)</th>
+              <th>@Html.DisplayNameFor(model => model.InvoiceDate)</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+               <td>@Html.DisplayFor(model => model.PurchaseOrderNumber)</td>
+               <td>@Html.DisplayFor(model => model.Grnnumber)</td>
+               <td>@Html.DisplayFor(model => model.InvoiceDate)</td>
+             </tr>
+        </tbody>
+    </table>
+</div>

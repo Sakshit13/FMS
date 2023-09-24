@@ -1,0 +1,303 @@
+﻿@model FMS._23.V1.ViewModels.GRNViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4><b>Create New GRN</b></h4>
+<a asp-action="Index" style="float:right" class="btn btn-success">Back to List</a>
+<br />
+<hr />
+<div class="container">
+<div class="row">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Supplier, new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.Supplier, new SelectList(ViewBag.SupplierList, "Value", "Text"), "Select Supplier", new { @class = "form-control",id = "Supplier" })
+                    @Html.HiddenFor(model => model.Supplier, new { id = "SelectedSupplier" })
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.PurchaseOrderNo, new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.PurchaseOrderNo, new SelectList(ViewBag.PurchaseOrderList, "Value", "Text"), "Select Purchase Order", new { @class = "form-control",id="PurchaseOrderNo" })
+                    @Html.HiddenFor(model => model.PurchaseOrderNo, new { id = "SelectedPurchaseOrder" })
+                </div>
+                <div class="form-group col-md-4">
+                    <br />
+                    <input type="submit" value="Search" class="btn btn-success" id="searchButton" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                <label asp-for="GRNNO" class="control-label"></label>
+                    <input asp-for="GRNNO" class="form-control" value="@ViewBag.GRNNO" readonly />
+                    <input asp-for="GRNNO" type="hidden" id="GRNNO" />
+                <span asp-validation-for="GRNNO" class="text-danger"></span>
+            </div>
+                <div class="form-group col-md-4">
+                <label asp-for="ChallanNo" class="control-label"></label>
+                <input asp-for="ChallanNo" class="form-control" />
+                    <input asp-for="ChallanNo" type="hidden" id="ChallanNo" />
+                <span asp-validation-for="ChallanNo" class="text-danger"></span>
+            </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="BillNO" class="control-label"></label>
+                    <input asp-for="BillNO" class="form-control" />
+                    <input asp-for="BillNO" type="hidden" id="BillNO" />
+                    <span asp-validation-for="BillNO" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                <label asp-for="DateOfRecipt" class="control-label"></label>
+                <input asp-for="DateOfRecipt" class="form-control" />
+                    <input asp-for="DateOfRecipt" type="hidden" id="DateOfRecipt" />
+                <span asp-validation-for="DateOfRecipt" class="text-danger"></span>
+            </div>
+                <div class="form-group col-md-4">
+                <label asp-for="DateOfBill" class="control-label"></label>
+                <input asp-for="DateOfBill" class="form-control" />
+                    <input asp-for="DateOfBill" type="hidden" id="DateOfBill" />
+                <span asp-validation-for="DateOfBill" class="text-danger"></span>
+            </div>
+                <div class="form-group col-md-4">
+                    <br />
+                    <input type="submit" value="Save" class="btn btn-primary" id="saveButton" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div class="table-responsive" style="display:none">
+<table id="purchaseOrderTable" class="table">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Part Name</th>
+            <th>Part Number</th>
+            <th>Order Date</th>
+            <th>PO Quantity</th>
+            <th>Unit Price</th>
+            <th>Recieved Quantity</th>
+            <th>Accepted Quantity</th>
+            <th>Rejected Quantity</th>
+            <th>Balance Quantity</th>
+            <th>GST</th>
+            <th>Tax Amount</th>
+            <th>Total Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#Supplier").change(function () {
+        var selectedSupplier = $(this).val();
+
+        $.ajax({
+            url: '/GRNDetails/GetPurchaseOrders',
+            type: 'POST',
+            data: { supplierId: selectedSupplier, Type: "PO" },
+            success: function (data) {
+            
+                var purchaseOrderDropdown = $("#PurchaseOrderNo");
+                purchaseOrderDropdown.empty();
+
+                purchaseOrderDropdown.append($('<option>', {
+                    value: '',
+                    text: 'Select Purchase Order'
+                }));
+                var jsonStr = JSON.stringify(data);
+                var parsedData = JSON.parse(jsonStr); 
+                for (var item in parsedData) {
+                    purchaseOrderDropdown.append($('<option>', {
+                        value: parsedData[item].key,
+                        text: parsedData[item].value
+                    }));
+                }
+
+            },
+            error: function () {
+                alert('Error fetching purchase orders.'); 
+            }
+        });
+    });
+
+    $("#searchButton").click(function () {
+        $(".table-responsive").css("display", "block");
+        var selectedPurchaseOrder = $("#PurchaseOrderNo").val();
+
+        $.ajax({
+            url: '/GRNDetails/GetPurchaseOrdersDetails',
+            type: 'POST',
+            data: { purchaseOrderNo: selectedPurchaseOrder },
+            success: function (data) {
+                var purchaseOrderTable = $("#purchaseOrderTable tbody");
+                purchaseOrderTable.empty();
+                
+                for (var i = 0; i < data.length; i++) {
+                    var row = $('<tr>');
+                    row.append($('<td>').html('<button class="btn btn-danger delete-row"><b style="font-size:20px;">×</b></button>'));
+                    row.append($('<td>').text(data[i].partName));
+                    row.append($('<td>').text(data[i].partNumber));
+                    row.append($('<td>').text(new Date(data[i].orderDate).toLocaleDateString()));
+                    row.append($('<td>').text(data[i].poQuantity));
+                    row.append($('<td>').text(data[i].unitPrice));
+                    row.append($('<td>').html('<input type="text" class="edit-input recievedQty" value="' + data[i].recievedQty + '">'));
+                    row.append($('<td>').html('<input type="text" class="edit-input acceptedQty" value="' + data[i].acceptedQty + '">'));
+                    row.append($('<td>').html('<input type="text" class="edit-input rejectedQty" readonly value="' + data[i].rejectedQty + '">'));
+                    row.append($('<td>').html('<input type="text" class="edit-input balanceQty" readonly value="' + data[i].balanceQty + '">'));
+                    var gstValue = `CGST(%): ${data[i].cgst}, IGST(%): ${data[i].igst}, TCS(%): ${data[i].tcs}, SGST(%): ${data[i].sgst}`;
+                    row.append($('<td>').text(gstValue));
+                    row.append($('<td>').html('<input type="text" class="edit-input taxAmount" readonly value="' + data[i].taxAmount + '">'));
+                    row.append($('<td>').html('<input type="text" class="edit-input" readonly value="' + data[i].totalPrice + '">'));
+                    
+                    purchaseOrderTable.append(row);
+                }
+
+                $('#purchaseOrderTable').on('change', '.recievedQty', function () {
+                    var inputValue = parseInt($(this).val());
+                    var poQuantity = parseInt($(this).closest('tr').find('td:eq(4)').text());
+                    if (!isNaN(inputValue) && inputValue > poQuantity) {
+                        alert('Received Quantity cannot be greater than PO Quantity.');
+                        $(this).focus();
+                        $(this).val(Math.min(poQuantity, inputValue));
+                    }
+                });
+
+                $('#purchaseOrderTable').on('change', '.acceptedQty', function () {
+                    var acceptedQty = parseInt($(this).val());
+                    var row = $(this).closest('tr');
+                    var poQuantity = parseInt($(this).closest('tr').find('td:eq(4)').text());
+                    var recievedQty = parseInt(row.find('.recievedQty').val());
+
+                    if (!isNaN(acceptedQty) && (acceptedQty > poQuantity || acceptedQty > recievedQty)) {
+                        alert('Accepted Quantity cannot be greater than PO Quantity or Received Quantity.');
+                        $(this).focus();
+                        $(this).val(Math.min(poQuantity, recievedQty));
+                    }
+                    else{
+                        
+                        var rejectedQtyInput = row.find('.rejectedQty');
+                        var rejectedQty = recievedQty - acceptedQty;
+
+                        if (rejectedQty < 0) {
+                            rejectedQty = 0; 
+                        }
+
+                        rejectedQtyInput.val(rejectedQty);
+
+                        var balanceQtyInput = row.find('.balanceQty');
+                        var balanceQty = poQuantity - acceptedQty;
+                        if (balanceQtyInput < 0) {
+                            balanceQtyInput = 0; 
+                        }
+
+                        balanceQtyInput.val(balanceQty);
+
+                        var unitPrice = parseFloat(row.find('td:eq(5)').text());
+
+                        var gstValue = row.find('td:eq(10)').text(); 
+                        var gstValues = gstValue.match(/\d+(\.\d+)?/g);
+                        var totalGST = 0;
+                        if (gstValues) {
+                            for (var i = 0; i < gstValues.length; i++) {
+                                totalGST += parseFloat(gstValues[i]);
+                            }
+                        }
+            
+                        var calculatedTaxAmount = (unitPrice*unitPrice)/100;
+                        var taxAmountInput = row.find('.taxAmount');
+                        taxAmountInput.val(calculatedTaxAmount);
+
+                        
+                    }
+                });
+
+                $('#purchaseOrderTable').on('click', '.delete-row', function () {
+                    $(this).closest('tr').remove();
+                });
+            },
+            error: function () {
+                alert('Error fetching purchase orders.');
+            }
+        });
+    });
+
+    $("#saveButton").click(function () {
+        // Create an array to store the modified data
+        var modifiedData = [];
+
+        // Iterate through the rows in the table
+        $("#purchaseOrderTable tbody tr").each(function () {
+            var row = $(this);
+            var rowData = {
+                // Get the values from the row
+                PartName: row.find('td:eq(1)').text(),
+                PartNumber: row.find('td:eq(2)').text(),
+                OrderDate: row.find('td:eq(3)').text(),
+                POQuantity: parseInt(row.find('td:eq(4)').text()),
+                UnitPrice: parseFloat(row.find('td:eq(5)').text()),
+                RecievedQty: parseInt(row.find('.recievedQty').val()),
+                AcceptedQty: parseInt(row.find('.acceptedQty').val()),
+                RejectedQty: parseInt(row.find('.rejectedQty').val()),
+                BalanceQty: parseInt(row.find('.balanceQty').val()),
+                GST: row.find('td:eq(10)').text(),
+                TaxAmount: parseFloat(row.find('.taxAmount').val()),
+                TotalCost: parseFloat(row.find('td:eq(12)').text())
+            };
+
+            // Add the rowData to the modifiedData array
+            modifiedData.push(rowData);
+        });
+        alert($("#SelectedSupplier").val())
+        // Create an object to send to the server
+        var dataToSend = {
+            GRNNO: $("#GRNNO").val(),
+            ChallanNo: $("#ChallanNo").val(),
+            BillNO: $("#BillNO").val(),
+            DateOfRecipt: $("#DateOfRecipt").val(),
+            DateOfBill: $("#DateOfBill").val(),
+            Supplier: $("#SelectedSupplier").val(),
+            PurchaseOrderNo: $("#SelectedPurchaseOrder").val(),
+            ModifiedData: modifiedData
+        };
+        alert(JSON.stringify(dataToSend));
+        // Send an AJAX request to save the data
+        $.ajax({
+            url: '/GRNDetails/SaveData', // Replace with your server endpoint
+            type: 'POST',
+            
+            data:{GRNData: JSON.stringify(dataToSend)},
+            success: function (response) {
+                if (response.success) {
+                    alert('Data saved successfully.');
+                    // Optionally, you can redirect or perform other actions after saving.
+                } else {
+                    alert('Error saving data.');
+                }
+            },
+            error: function () {
+                alert('Error saving data.');
+            }
+        });
+    });
+
+
+
+
+</script>
+

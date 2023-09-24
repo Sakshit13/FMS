@@ -1,0 +1,10 @@
+﻿@model FMS._23.V1.ViewModels.MasterViewModel
+@{
+    ViewData["Title"] = "MasterList";
+}
+
+<select asp-for="VendorSelected" asp-items="Model.VendorList"> 
+    <option value=""> Select Vendor</option>
+</select>
+<h1>MasterList</h1>
+

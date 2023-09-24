@@ -1,0 +1,121 @@
+﻿@model IEnumerable<FMS._23.V1.Models.PurchaseOrderDetailsResponse>
+
+
+
+@*@model List<FMS._23.V1.Models.PurchaseOrderDetailsResponse>*@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Add search inputs -->
+<select id="searchType">
+     <option value="All">All</option>
+    <option value="purchaseOrderNo">Purchase Order No</option>
+    <option value="vendorName">Vendor Name</option>
+    <option value="date">Date</option>
+</select>
+
+<div id="searchInputs">
+    <input type="text" id="purchaseOrderNo" placeholder="Purchase Order No" style="display: none;" />
+    <input type="text" id="vendorName" placeholder="Vendor Name" style="display: none;" />
+    <input type="text" id="fromDate" placeholder="From Date" style="display: none;" />
+    <input type="text" id="toDate" placeholder="To Date" style="display: none;" />
+</div>
+
+<button id="searchButton">Search</button>
+
+
+<!-- Container for displaying search results -->
+<div id="resultContainer">
+    <!-- The search results will be displayed here -->
+    <table>
+        <thead>
+            <tr>
+                <th>Row Number</th>
+                <th>ID</th>
+                <th>Purchase Order Number</th>
+                <th>GRN Number</th>
+                <th>Order Date</th>
+                <th>Vendor Name</th>
+                <!-- Add columns for other properties -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@item.RowNumber</td>
+                        <td>@item.Id</td>
+                        <td>@item.PurchaseOrderNumber</td>
+                        <td>@item.GrnNumber</td>
+                        <td>@item.OrderDate.ToString("yyyy-MM-dd")</td>
+                        <td>@item.VendorName</td>
+                        <!-- Render other property values here -->
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Include jQuery library if not already included -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  
+<script>
+    $(document).ready(function () {
+        // Function to clear text boxes
+        function clearTextBoxes() {
+            $('#purchaseOrderNo').val('');
+            $('#vendorName').val('');
+            $('#fromDate').val('');
+            $('#toDate').val('');
+        }
+
+       
+
+        $('#searchType').change(function () {
+            var selectedOption = $(this).val();
+
+            // Show the input elements based on the selected option
+            $('#searchInputs input').hide();
+            clearTextBoxes(); // Clear text boxes when the search type changes
+
+            if (selectedOption === 'purchaseOrderNo') {
+                $('#purchaseOrderNo').show();
+            } else if (selectedOption === 'vendorName') {
+                $('#vendorName').show();
+            } else if (selectedOption === 'date') {
+                $('#fromDate').show();
+                $('#toDate').show();
+            }
+        });
+
+        $('#searchButton').click(function () {
+            var selectedOption = $('#searchType').val();
+            var searchData = {};
+
+            if (selectedOption === 'purchaseOrderNo') {
+                searchData.purchaseOrderNo = $('#purchaseOrderNo').val();
+            } else if (selectedOption === 'vendorName') {
+                searchData.vendorName = $('#vendorName').val();
+            } else if (selectedOption === 'date') {
+                searchData.fromDate = $('#fromDate').val();
+                searchData.toDate = $('#toDate').val();
+            }
+
+            $.ajax({
+                url: '@Url.Action("Index", "PO")', // Update with your controller and action names
+                type: 'POST',
+                data: searchData, // Pass the searchData object
+                success: function (result) {
+                    // Update the HTML content with the result.
+                    $('#resultContainer').html(result);
+                },
+                error: function () {
+                    alert('Error while fetching data.');
+                }
+            });
+        });
+      
+    });
+</script>

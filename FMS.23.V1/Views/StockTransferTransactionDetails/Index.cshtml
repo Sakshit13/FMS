@@ -1,0 +1,131 @@
+﻿@model IEnumerable<FMS._23.V1.Models.StockTransferTransactionDetails>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StockTransferByDepot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockReceivedByDepot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequisitionCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockTransferNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockIssueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PartNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestedQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BalanceQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cGst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sGst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.iGst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssuedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockTransferByDepot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockReceivedByDepot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequisitionCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockTransferNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockIssueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestedQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BalanceQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cGst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sGst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.iGst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

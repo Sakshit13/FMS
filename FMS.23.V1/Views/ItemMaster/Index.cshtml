@@ -1,0 +1,197 @@
+﻿@model IEnumerable<FMS._23.V1.ViewModels.ItemViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<h1>Index</h1>
+<style>
+    /* Style for the form container */
+    .form-container {
+        margin-top: 50px;      
+    }
+
+    /* Style for the search box */
+  
+    /* Style for the search type dropdown */
+    .search-type {         
+        width: 200px;
+        padding: 6px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    /* Style for the search button */
+    .search-button {
+        /*padding: 10px 20px;*/
+        font-size: 16px;
+        background-color: #3498db;
+        color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+<div class="form-container">
+    <div class="form-row row">
+        <div class="form-group col-sm-3">
+            <label for="search-type" class="form-label">Search Type</label>
+            <select class="search-type col-sm-6" name="search_type" id="search-type">
+                <option value="all">All</option>
+                <option value="title">Search By Part Number</option>
+            </select>
+        </div>
+
+        <div class="form-group col-sm-4" id="part-number-input" style="display: none;">
+            <label for="part-number " class="form-lable col-sm-4">Part Number</label>
+            <input type="text" class="search-textbox form-control " id="part-number" />
+        </div>
+
+        <div class="form-group col-sm-4" style="  margin-top: 30px;">
+            <button type="button" class="search-button btn " id="search-button">Search</button>
+            <a asp-action="ExportToExcel" class="btn btn-secondary">Excel</a>
+            <a asp-action="Create" class="btn btn-primary" >Add New Part</a>
+        </div>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PartNumber)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AltPartNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remarks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemCategories)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitOfMeasurment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Igst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cgst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sgst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinimumStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mrp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Depot)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AltPartNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remarks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Igst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cgst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sgst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinimumStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mrp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Depot.Id)
+            </td>
+              
+            <td>
+                    <a asp-action="Edit" asp-route-PartNumber="@item.PartNumber">Edit</a> |
+                    <a asp-action="Delete" asp-route-PartNumber="@item.PartNumber">Delete</a>
+            </td>
+        </tr>
+}
+        
+    </tbody>
+</table>
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#search-type").change(function () {
+                if ($(this).val() === "title") {
+                    $("#part-number-input").show();
+                } else {
+                    $("#part-number-input").hide();
+                }
+            });
+
+            $("#search-button").click(function () {
+                if ($("#search-type").val() === "title") {
+                    var partNumber = $("#part-number").val();
+                    // Perform the search or any other action with the part number
+                    // You can use AJAX to send the part number to the server and retrieve the details.
+                    // For simplicity, let's just display an alert here.
+                    alert("Searching for Part Number: " + partNumber);
+                } else {
+                    alert("Searching for All Items");
+                }
+            });
+        });
+    </script>
+</body>
+
+
+                          

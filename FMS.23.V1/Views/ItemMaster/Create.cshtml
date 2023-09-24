@@ -1,0 +1,139 @@
+﻿@model FMS._23.V1.ViewModels.ItemViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<h4 style="color: #FF00FF;text-align:center"><b>ADD PART FOR ALL DEPOT HERE</b></h4>
+<a asp-action="Index" style="float:right" class="btn btn-success">Back to List</a>
+<br />
+<hr />
+<div class="container">
+
+    <div class="row">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="PartNumber" class="control-label"></label>
+                    <input asp-for="PartNumber" class="form-control" id="PartNumber" />
+                    <span asp-validation-for="PartNumber" class="text-danger"></span>
+                    <span id="duplicate-part-number-error" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="AltPartNum" class="control-label"></label>
+                    <input asp-for="AltPartNum" class="form-control" />
+                    <span asp-validation-for="AltPartNum" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="Remarks" class="control-label"></label>
+                    <input asp-for="Remarks" class="form-control" />
+                    <span asp-validation-for="Remarks" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="CategoryId" class="control-label"></label>
+                    <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="UnitOfMeasurmentId" class="control-label"></label>
+                    <select asp-for="UnitOfMeasurmentId" class="form-control" asp-items="ViewBag.UnitOfMeasurmentId"></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="Rate" class="control-label"></label>
+                    <input asp-for="Rate" class="form-control" />
+                    <span asp-validation-for="Rate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Discount" class="control-label"></label>
+                    <input asp-for="Discount" class="form-control" />
+                    <span asp-validation-for="Discount" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Igst" class="control-label"></label>
+                    <input asp-for="Igst" class="form-control" />
+                    <span asp-validation-for="Igst" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="Cgst" class="control-label"></label>
+                    <input asp-for="Cgst" class="form-control" />
+                    <span asp-validation-for="Cgst" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Sgst" class="control-label"></label>
+                    <input asp-for="Sgst" class="form-control" />
+                    <span asp-validation-for="Sgst" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Location" class="control-label"></label>
+                    <input asp-for="Location" class="form-control" />
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="MinimumStock" class="control-label"></label>
+                    <input asp-for="MinimumStock" class="form-control" />
+                    <span asp-validation-for="MinimumStock" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Mrp" class="control-label"></label>
+                    <input asp-for="Mrp" class="form-control" />
+                    <span asp-validation-for="Mrp" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <br />
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#PartNumber").blur(function () {
+            var partNumber = $(this).val();
+
+            $.ajax({
+                type: "POST",
+                url: "/ItemMaster/CheckDuplicatePartNumber",
+                data: { partNumber: partNumber },
+                success: function (result) {
+                    if (!result) {
+                        $("#duplicate-part-number-error").text("Part Number already exists.");
+                    } else {
+                        $("#duplicate-part-number-error").text("");
+                    }
+                }
+            });
+        });
+
+    });
+</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

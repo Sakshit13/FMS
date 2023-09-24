@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FMS.23.V1.props" />
+</Project>

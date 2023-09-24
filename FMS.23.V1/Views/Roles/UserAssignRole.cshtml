@@ -1,0 +1,27 @@
+﻿@model FMS._23.V1.ViewModels.AdminViewModel
+
+@{
+    ViewData["Title"] = "User Assign Role";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="UserAssignRole">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <select class="form-control form-control-lg" asp-for="UserID" asp-items="Model.UserList" id="exampleFormControlSelect2">
+                    <option value="">Select a User</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <select class="form-control form-control-lg" asp-for="RoleID" asp-items="Model.RoleList" id="exampleFormControlSelect2">
+                    <option value="">Select a role</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Assign</button>
+</form>

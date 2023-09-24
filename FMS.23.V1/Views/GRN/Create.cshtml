@@ -1,0 +1,199 @@
+﻿@model FMS._23.V1.Models.GrntransactionDetail
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4><b>Create New GRN</b></h4>
+<a asp-action="Index" style="float:right" class="btn btn-success">Back to List</a>
+<br />
+<hr />
+<div class="container">
+
+    <div class="row">
+
+        <form asp-action="Create" id="createForm" method="post" enctype="multipart/form-data" >
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- First Row -->
+            <div class="form-group">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label asp-for="Grnnumber" class="control-label"></label>
+                            <input asp-for="Grnnumber" class="form-control" />
+                            <span asp-validation-for="Grnnumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="PartNumber" class="control-label"></label>
+                            <input asp-for="PartNumber" class="form-control" />
+                            <span asp-validation-for="PartNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="RecievedQty" class="control-label"></label>
+                            <input asp-for="RecievedQty" class="form-control" />
+                            <span asp-validation-for="RecievedQty" class="text-danger"></span>
+                        </div>
+                    </div>
+               
+            </div>
+
+                <!-- Second Row -->
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label asp-for="AcceptedQty" class="control-label"></label>
+                        <input asp-for="AcceptedQty" class="form-control" />
+                        <span asp-validation-for="AcceptedQty" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="RejectedQty" class="control-label"></label>
+                        <input asp-for="RejectedQty" class="form-control" />
+                        <span asp-validation-for="RejectedQty" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="UnitPrice" class="control-label"></label>
+                        <input asp-for="UnitPrice" class="form-control" />
+                        <span asp-validation-for="UnitPrice" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Third Row -->
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label asp-for="Tax" class="control-label"></label>
+                        <input asp-for="Tax" class="form-control" />
+                        <span asp-validation-for="Tax" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="Discount" class="control-label"></label>
+                        <input asp-for="Discount" class="form-control" />
+                        <span asp-validation-for="Discount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="Cgst" class="control-label"></label>
+                        <input asp-for="Cgst" class="form-control" />
+                        <span asp-validation-for="Cgst" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Fourth Row -->
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label asp-for="Sgst" class="control-label"></label>
+                        <input asp-for="Sgst" class="form-control" />
+                        <span asp-validation-for="Sgst" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="Igst" class="control-label"></label>
+                        <input asp-for="Igst" class="form-control" />
+                        <span asp-validation-for="Igst" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="Tcs" class="control-label"></label>
+                        <input asp-for="Tcs" class="form-control" />
+                        <span asp-validation-for="Tcs" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Five Row -->
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label asp-for="Cartage" class="control-label"></label>
+                        <input asp-for="Cartage" class="form-control" />
+                        <span asp-validation-for="Cartage" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="FreightAmount" class="control-label"></label>
+                        <input asp-for="FreightAmount" class="form-control" />
+                        <span asp-validation-for="FreightAmount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="OpeningStock" class="control-label"></label>
+                        <input asp-for="OpeningStock" class="form-control" />
+                        <span asp-validation-for="OpeningStock" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Six Row -->
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label asp-for="ClosingStock" class="control-label"></label>
+                        <input asp-for="ClosingStock" class="form-control" />
+                        <span asp-validation-for="ClosingStock" class="text-danger"></span>
+                    </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Active" class="control-label"></label>
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(model => model.Active)
+                            <span>Active</span>
+                        </label>
+                    </div>
+                    <span asp-validation-for="Active" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label asp-for="IsDeleted" class="control-label"></label>
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(model => model.IsDeleted)
+                            <span>IsDeleted</span>
+                        </label>
+                    </div>
+                    <span asp-validation-for="IsDeleted" class="text-danger"></span>
+                </div>
+                </div>
+
+                <!-- Seven Row -->
+                <div class="row">
+                    <div class="form-group col-md-4">
+                    <label asp-for="Remarks" class="control-label"></label>
+                    <input asp-for="Remarks" class="form-control" />
+                    <span asp-validation-for="Remarks" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                    <label asp-for="CreatedOn" class="control-label"></label>
+                    <input asp-for="CreatedOn" class="form-control" />
+                    <span asp-validation-for="CreatedOn" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                    <label asp-for="CreatedBy" class="control-label"></label>
+                    <input asp-for="CreatedBy" class="form-control" />
+                    <span asp-validation-for="CreatedBy" class="text-danger"></span>
+                    </div>
+                </div>
+
+            <!-- Eight Row -->
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="ModifiedOn" class="control-label"></label>
+                    <input asp-for="ModifiedOn" class="form-control" />
+                    <span asp-validation-for="ModifiedOn" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="ModifiedBy" class="control-label"></label>
+                    <input asp-for="ModifiedBy" class="form-control" />
+                    <span asp-validation-for="ModifiedBy" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="UploadInvoice" class="control-label"></label>
+                    <input type="file" asp-for="UploadInvoice" class="form-control" />
+                    <span asp-validation-for="UploadInvoice" class="text-danger"></span>
+                </div>
+            </div>
+            <div  style="float:right">
+                <br />
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/viewjs/grn.js"></script>
+}
+

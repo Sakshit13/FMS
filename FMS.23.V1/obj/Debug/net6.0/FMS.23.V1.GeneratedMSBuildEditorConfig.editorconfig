@@ -1,0 +1,225 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = FMS._23.V1
+build_property.RootNamespace = FMS._23.V1
+build_property.ProjectDir = D:\ShivanandPathak\Git\FMS\FMS\FMS.23.V1\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = D:\ShivanandPathak\Git\FMS\FMS\FMS.23.V1
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/Account/MasterList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxNYXN0ZXJMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/AdminAccount/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5BY2NvdW50XEZvcmdvdFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/AdminAccount/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5BY2NvdW50XExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/AdminAccount/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5BY2NvdW50XFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/AdminAccount/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5BY2NvdW50XFJlc2V0UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/AdminAccount/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5BY2NvdW50XFJlc2V0UGFzc3dvcmRDb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/GRNDetails/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1JORGV0YWlsc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/GRNDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1JORGV0YWlsc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/GRN/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1JOXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/GRN/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1JOXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/GRN/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1JOXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/GRN/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1JOXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/ItemCategories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbUNhdGVnb3JpZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/ItemCategories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbUNhdGVnb3JpZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/ItemCategories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbUNhdGVnb3JpZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/ItemCategories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbUNhdGVnb3JpZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/ItemCategories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbUNhdGVnb3JpZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/ItemMaster/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbU1hc3RlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/ItemMaster/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbU1hc3RlclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/ItemMaster/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbU1hc3RlclxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/ItemMaster/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbU1hc3RlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/ItemMaster/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbU1hc3RlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/PO/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUE9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/PO/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUE9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/Roles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/Roles/UserAssignRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcVXNlckFzc2lnblJvbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferRequests/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclJlcXVlc3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferRequests/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclJlcXVlc3RzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferRequests/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclJlcXVlc3RzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferRequests/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclJlcXVlc3RzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferRequests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclJlcXVlc3RzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferTransactionDetails/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclRyYW5zYWN0aW9uRGV0YWlsc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferTransactionDetails/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclRyYW5zYWN0aW9uRGV0YWlsc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferTransactionDetails/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclRyYW5zYWN0aW9uRGV0YWlsc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferTransactionDetails/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclRyYW5zYWN0aW9uRGV0YWlsc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferTransactionDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclRyYW5zYWN0aW9uRGV0YWlsc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferTransactionDetails/STRequestDetals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclRyYW5zYWN0aW9uRGV0YWlsc1xTVFJlcXVlc3REZXRhbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/StockTransferTransactionDetails/STRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFuc2ZlclRyYW5zYWN0aW9uRGV0YWlsc1xTVFJlcXVlc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/UnitOfMeasurement/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdE9mTWVhc3VyZW1lbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/UnitOfMeasurement/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdE9mTWVhc3VyZW1lbnRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/UnitOfMeasurement/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdE9mTWVhc3VyZW1lbnRcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/UnitOfMeasurement/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdE9mTWVhc3VyZW1lbnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/UnitOfMeasurement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdE9mTWVhc3VyZW1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/Vendor/VendorDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXFZlbmRvckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ShivanandPathak/Git/FMS/FMS/FMS.23.V1/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-b2pdkpkam6
